@@ -9,6 +9,7 @@ function renderCartContents() {
   const htmlItems = cartItemTemplate(cartItems);
   // const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems;
+  // document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
 
 function cartItemTemplate(item) {
