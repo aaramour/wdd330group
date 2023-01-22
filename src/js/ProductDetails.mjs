@@ -18,6 +18,14 @@ function productDetailsTemplate(product) {
         </div></section>`;
 }
 
+function removeClass(thing, className){ //create a function that takes a thing
+  thing.classList.remove(className); //and removes the class className from it
+};
+
+function addClass(thing, className){ //create a function that takes a thing
+  thing.classList.add(className); //and gives a class to the thing
+  let timerId = setTimeout(removeClass, 1200, thing, className)//set a timeout to remove the 'shake' class from the thing 1.2 seconds later
+};
 
 export default class ProductDetails {
     constructor(productId, dataSource) {
@@ -33,14 +41,17 @@ export default class ProductDetails {
         this.renderProductDetails("main");
         // once the HTML is rendered we can add a listener to Add to Cart button
         // Notice the .bind(this). Our callback will not work if we don't include that line. Review the readings from this week on 'this' to understand why.
+        
 
-        document
-            .getElementById('addToCart')
-            .addEventListener('click', this.addProductToCart.bind(this));
+        var element = document.getElementById("addToCart");
+        element.addEventListener("click", this.addProductToCart.bind(this));
+        
     }
 
     addProductToCart() {
-        setLocalStorage("so-cart", this.product);
+        setLocalStorage("so-cart", this.product);//add the product to the cart
+        var cartIcon = document.querySelector('svg');//find the Cart icon
+        addClass(cartIcon, "sproing");//make the cart icon jiggle
     }
 
 // add to cart button event handler

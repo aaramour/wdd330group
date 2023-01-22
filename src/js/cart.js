@@ -27,3 +27,4 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
+
