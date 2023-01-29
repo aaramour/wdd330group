@@ -234,3 +234,11 @@ footer {
   75% {transform:translateX(6px);}
   100% { transform:translateX(0);}
 }
+
+/* Cart Footer */
+.hidden > * {
+  visibility: hidden;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
