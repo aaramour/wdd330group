@@ -21,27 +21,17 @@ export default class ProductList {
     }
 }
 
-// function isProductActive (product) {
-//     const activeProductIds = ["880RR", "985RF", "985PR", "344YJ"];
-//     if product.Id in activeProductIds (
-//         return true
-//     ) else (
-//         return false
-//     );
-// }
-
-function isProductActive (product) {
+function isProductActive (product) { //Method to check if the product is in the list of active products
     const activeProducts = ["880RR", "985RF", "985PR", "344YJ"];
-    const determiner = activeProducts.includes(product.Id);
-    // console.log(determiner);
-    return determiner;
+    if(activeProducts.includes(product.Id)) {
+    return true;
+    } else { return false};
 }
 
 function productCardTemplate(product) {
     // console.log(product.Id);
     // isProductActive(product);
-    let determiner = isProductActive(product);
-    if (determiner == true) {
+    if (isProductActive(product)) {
     return `<li class="product-card">
     <a href="product_pages/index.html?product=${product.Id}">
     <img
